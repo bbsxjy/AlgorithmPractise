@@ -1,0 +1,20 @@
+
+public class Solution {
+        public int[] plusOne(int[] digits) {	
+            int i = digits.length - 1;				//定位在array的最后一位上
+            if (digits[i] < 9)			//如果最后一位不是9的话
+                digits[i]++;
+            else {					//最后一位直接+1
+                for (; i >= 0 && digits[i] == 9; --i)  //如果最后一位是9
+                    digits[i] = 0;		//赋值0				
+                if (digits[0] == 0) {    //如果第一位是0
+                    digits = new int[digits.length + 1];	//则重新开一组array
+                    digits[0] = 1;			//让第一位为1
+                } else
+                    digits[i]++;			//其他情况每一位加1
+            }
+            return digits;
+        }
+    }
+
+	
