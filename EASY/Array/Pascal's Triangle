@@ -1,0 +1,48 @@
+    public class Solution {
+        public List<List<Integer>> generate(int numRows) {
+    	List<List<Integer>>t=new ArrayList<List<Integer>>();
+        List<Integer> r,temp ;
+        int count=1;
+        if(numRows==0){
+        	return t;	
+        }
+        else{
+  
+        		r = new ArrayList<Integer>();
+        		while(count<=2&&count<=numRows){
+        			r.add(1);
+        			temp = new ArrayList<Integer>();
+        			temp.addAll(r);
+        			t.add(temp);
+        			count++;
+        		}
+        		
+        		while(count<=numRows){
+        			r = new ArrayList<Integer>();
+        			temp=new ArrayList<Integer>();
+        			temp=t.get(count-2);
+        			r.add(1);
+        			for(int i =1;i<temp.size();i++){
+        				for(int j =i-1;j<i;j++){
+        					int tempInt=temp.get(i)+temp.get(j);
+        					r.add(tempInt);
+        				}
+        				}
+        			
+        			r.add(1);
+        			temp=new ArrayList<Integer>();
+        			temp.addAll(r);
+        			t.add(temp);
+        			count++;
+        	}
+        		
+        	
+        	}
+        
+        return t;
+        
+        
+    
+    }   
+        
+    }
