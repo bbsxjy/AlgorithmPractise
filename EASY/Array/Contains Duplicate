@@ -1,0 +1,25 @@
+public class Solution {
+public boolean containsDuplicate(int[] nums) {
+    if (nums.length == 0) return false;
+
+    //find least one
+    int least = Integer.MAX_VALUE;
+    for (int i : nums) {
+        if (i < least) least = i;
+    }
+
+    //find largest one
+    int largest = Integer.MIN_VALUE;
+    for (int i : nums) {
+        if (i > largest) largest = i;
+    }
+
+    int[] temp = new int[largest - least + 1];
+    for (int i : nums) {
+        if (temp[i - least] != 0) return true;
+        else temp[i - least] = 1;
+    }
+    return false;
+}
+
+}
