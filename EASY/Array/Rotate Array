@@ -1,0 +1,38 @@
+public class Solution {
+    public void rotate(int[] nums, int k) {
+        int[] tempNums=new int[nums.length];
+    	System.arraycopy(nums, 0, tempNums, 0, nums.length);
+    	int counter=0;
+    	
+    	if(k==0||k==nums.length){
+    	nums=nums;
+    	}else if(k>nums.length){
+    	    k=k%nums.length;
+    	}
+    	
+    
+    	
+    	
+    	//exchange the 1 to k nums=k to n nums
+    	for(int i =nums.length-k;i<nums.length;i++){
+    		nums[counter]=nums[i];
+    		counter++;
+    	}
+    	//exchange the k to n = 1 to k
+    	for(int i =tempNums.length-1;i>k-1;i--){
+    		if(i-k<0){
+    			tempNums[i]=tempNums[i];
+    		}else{
+    		tempNums[i]=tempNums[i-k];
+    		}
+    	
+    	}
+    	//change the different part
+    	for(int i =k;i<nums.length;i++){
+    		nums[i]=tempNums[i];
+    	}
+    	
+    
+    
+    } 
+    }
