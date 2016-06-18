@@ -1,0 +1,60 @@
+public class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Map<Integer,Integer> mp = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> mp2 = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> ar=new HashMap<Integer,Integer>();
+        
+        if(nums1.length==0){
+        	return nums1;
+        }
+        
+        if(nums2.length==0){
+        	return nums2;
+        }
+        
+        else{
+        	//transfer array1 to map
+	        for(int i = 0; i<nums1.length; i++){
+	        	if(mp.containsKey(nums1[i])){
+	        		mp.put(nums1[i],mp.get(nums1[i])+1);
+	        	}else
+	        		mp.put(nums1[i],1);
+	        }
+	        //transfer array2 to map
+	        for(int i = 0; i<nums2.length; i++){
+	        	if(mp2.containsKey(nums2[i])){
+	        		mp2.put(nums2[i],mp2.get(nums2[i])+1);
+	        	}else
+	        		mp2.put(nums2[i],1);
+	        }
+	        
+	        // compare     
+	        for(int i =0; i<nums1.length;i++){
+	        	//pick the smallest appear
+	        	
+	        	if(mp.containsKey(nums1[i])&&mp2.containsKey(nums1[i])){
+		        	if(mp.get(nums1[i])<=mp2.get(nums1[i]) && mp.get(nums1[i])!=0 ){
+			        		ar.put(nums1[i],mp.get(nums1[i]));
+		        	}else if(mp.get(nums1[i])>=mp2.get(nums1[i]) && mp2.get(nums1[i])!=0){
+		        			ar.put(nums1[i],mp2.get(nums1[i]));
+		        	}
+	        	}
+	        }
+	        int count=0;
+            
+	        
+	        int[] nums=new int [ar.keySet().size()];
+	        
+	        for (int key : ar.keySet()) {
+
+					nums[count]=key;
+					count++;
+				
+			}
+	        
+	        return nums;
+
+        }
+        
+    }
+}
