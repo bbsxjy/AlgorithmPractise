@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+
+public class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        ArrayList<Character> ar;
+    	
+    	
+    	//row checking
+    	for(int i =0 ; i<board[0].length; i++){
+    		ar=new ArrayList<Character>();
+    		for(int j =0 ; j<board.length; j++){
+    			 if(ar.contains(board[i][j])==false){
+    				 ar.add(board[i][j]);
+    			 }else{
+    				 return false;
+    			 }	 
+    		}
+    	}
+        
+        
+    	//col checking
+    	
+    	for(int i =0 ; i<board.length; i++){
+    		ar=new ArrayList<Character>();
+    		for(int j =0 ; j<board[0].length; j++){
+    			 if(ar.contains(board[j][i])==false){
+    				 ar.add(board[j][i]);
+    			 }else{
+    				 return false;
+    			 }	 
+    		}
+    	}
+    	
+    	//3*3 checking
+    	return true;
+    	
+    	
+    }   
+}
