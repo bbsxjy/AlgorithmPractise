@@ -1,0 +1,40 @@
+//我的想法是，因为虽然不同的数字，最后都会是一个 循环， 所以我把循环加入了arraylist里，然后带入recursive检查
+//如果recursive的过程中，数字重复了，直接跳出
+
+
+public class Solution {
+    public boolean isHappy(int n) {
+    	ArrayList<Integer> ar = new ArrayList<Integer>(); 	
+    	if(n==1){return true;}
+    	else return happyHelper(n,ar);
+    }
+    
+    public boolean happyHelper(int n, ArrayList<Integer> ar){
+    	Map<Integer,Integer> mp = new HashMap<Integer,Integer>();
+    	String str=""+n;
+    	int temp=0;
+    	
+    	if(ar.contains(n)){
+    		return false;
+    	}
+    	ar.add(n);
+    	
+        for (int i = 0; i<str.length(); i++) {
+			char tempC=str.charAt(i);
+			temp=Integer.parseInt(String.valueOf(tempC));	
+			mp.put(i,temp);
+		}
+
+    	temp=0;
+    	for (int i : mp.values()) {
+    		temp=temp+i*i;
+		}
+    	
+    	if(temp==1){
+    		return true;
+    	}else{
+    		return happyHelper(temp,ar);
+    	}
+
+    }
+}
