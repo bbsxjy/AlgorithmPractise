@@ -1,0 +1,30 @@
+
+
+public boolean isAnagram(String s, String t) {
+        ArrayList <Character> ar= new ArrayList<Character>();
+        ArrayList <Character> ar2= new ArrayList<Character>();
+        
+       
+        
+        for (int i = 0; i<s.length(); i++) {
+			char tempC=s.charAt(i);
+				
+			ar.add(tempC);
+		}
+        Collections.sort(ar);
+        
+        for (int i = 0; i<t.length(); i++) {
+			char tempC=t.charAt(i);
+			
+			ar2.add(tempC);
+		}
+        Collections.sort(ar2);
+        
+        if(ar.equals(ar2)){
+        	return true;
+        }
+        
+        else 
+        	return false;
+        
+    }
