@@ -1,0 +1,43 @@
+public ListNode removeNthFromEnd(ListNode head, int n) {
+        int sum=0,count=1;
+        ListNode temp=head,cur=head.next,prev=head;
+        
+        if(head.next==null || head==null){
+        	return null;
+        }
+        
+        
+        
+        while(temp!=null){
+        	temp=temp.next;
+        	sum+=1;
+        }
+        
+        
+        
+        
+        while(cur!=null){
+        	
+        	if(sum==n){
+        		return head=head.next;
+        	}
+        	
+        	
+        	if(count==sum-n){        		
+        		prev.next=cur.next;
+        		break;
+        	}
+        	
+        	prev=prev.next;
+        	cur=cur.next;
+        	count++;
+        }
+        
+
+        	
+        return head;
+        
+        
+        
+        
+    }
