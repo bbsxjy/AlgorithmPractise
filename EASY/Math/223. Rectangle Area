@@ -1,0 +1,82 @@
+public class Solution {
+    public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
+        int lengthA,lengthB,widthA,widthB,distanceLa,distanceLb,distanceWa,distanceWb,MaxL,MaxW,maxL,maxW;
+        lengthA=Math.abs(A-C); lengthB=Math.abs(E-G);
+        widthA=Math.abs(B-D); widthB=Math.abs(H-F);
+        
+        if(lengthA*widthA==0){
+        	return lengthB*widthB;
+        }
+        
+        if(lengthB*widthB==0){
+        	return lengthA*widthA;
+        }
+        
+        if(lengthB>lengthA){
+        	maxL=lengthB;
+        }else{
+        	maxL=lengthA;
+        }
+        
+        if(widthB>widthA){
+        	maxW=widthB;
+        }else{
+        	maxW=widthA;
+        }
+        
+       
+        distanceLa=Math.abs(G-A); distanceWa=Math.abs(D-F);
+        distanceLb=Math.abs(E-C); distanceWb=Math.abs(H-B);
+      
+        if(distanceLa>distanceLb){
+        	MaxL=distanceLa;
+        }else{
+        	MaxL=distanceLb;
+        }
+        
+        if(distanceWa>distanceWb){
+        	MaxW=distanceWa;
+        }else{
+        	MaxW=distanceWb;
+        }
+        
+        if(MaxL<maxL){
+        	MaxL=maxL;
+        }
+        
+        if(MaxW<maxW){
+        	MaxW=maxW;
+        }
+        
+    	int areaA=lengthA*widthA;
+    	int areaB=lengthB*widthB;
+    	
+        //rectangles are sperate
+        if(lengthA+lengthB<=MaxL || widthA+widthB<=MaxW){
+        	return areaA+areaB;
+        }
+        else{
+        	int tempArea=areaA+areaB;
+        	int totalLen=lengthA+lengthB;
+        	int totalWei=widthA+widthB;
+      
+        	int diffL=totalLen-MaxL;
+        	int diffW=totalWei-MaxW;
+        	
+        	int diffArea=diffW*diffL;
+        	
+        	return Math.abs(tempArea-diffArea);
+
+        	
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
