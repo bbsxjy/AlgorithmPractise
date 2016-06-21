@@ -1,0 +1,43 @@
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        
+        //let iterating begin
+        
+                
+        //basecase
+        if(head==null){
+        	return false;
+        }
+        
+        if(head.next==null){
+        	return false;
+        }
+        
+        ListNode fastNode=head.next,slowNode=head;
+        
+        
+        while(fastNode!=null&&fastNode.next!=null){
+        	
+        	if(fastNode.equals(slowNode)){
+        		return true;
+        	}
+        	
+        	
+        	fastNode=fastNode.next.next;
+        	slowNode=slowNode.next;
+        	
+        	
+        	
+        	
+        }
+        
+        
+    	
+    	return false;
+    	
+
+    	
+    	
+    	
+    }
+}
