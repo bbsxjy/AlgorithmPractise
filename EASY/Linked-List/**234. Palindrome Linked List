@@ -1,0 +1,33 @@
+public class Solution {
+    public boolean isPalindrome(ListNode head) {
+    
+    if(head==null){
+    	return true;
+    }	
+    	
+    Stack s=new Stack();
+    String ori="",news="";
+    while(head!=null){
+    	ori+=head.val;
+    	s.push(head.val);
+    	head=head.next;
+    }
+    
+    while(!s.empty()){
+    	int i=(int) s.pop();
+    	news+=i;
+    	
+    }
+    
+    System.out.println(ori+" "+news);
+    
+    if(news.equals(ori)){
+    	return true;
+    }
+    else
+    	
+    	return false;
+    }
+    
+   
+}
