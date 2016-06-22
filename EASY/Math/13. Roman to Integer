@@ -1,0 +1,127 @@
+
+
+public class Solution {
+    public int romanToInt(String s) {
+        
+    	String [] str= s.split("");
+    	int temp,num=0;
+    	
+    	for(int i =0; i<str.length; i++){
+    		//I
+    		
+    		if(str[i].equals("I")){
+    			temp=1;
+    			//If next digit is 1, it means add +
+    			if(i+1<str.length){
+    				if(str[i+1].equals("I")){
+    					num=num+temp;
+    				}
+    				//otherwise, change this number to negative
+    				else{
+    					temp=-temp;
+    					num=num+temp;
+    				}
+    			}
+    			else{
+    				num=num+temp;
+    			}
+    			
+    		}
+    		//V
+    		else if(str [i].equals("V")){
+    			temp=5;
+    			if(i+1<str.length){
+    				if(str[i+1].equals("I")){
+    					num=num+temp;
+    				}
+    				else{
+    					temp=-temp;
+    					num=num+temp;
+    				}
+    			}
+    			else{
+    				num=num+temp;
+    			}
+    		}
+    		//X
+    		else if(str [i].equals("X")){
+    			temp=10;
+    			if(i+1<str.length){
+    				if(str[i+1].equals("I")||str[i+1].equals("V")||str[i+1].equals("X")){
+    					num=num+temp;
+    				}
+    				else{
+    					temp=-temp;
+    					num=num+temp;
+    				}
+    			}
+    			else{
+    				num=num+temp;
+    			}
+    		}
+    		//L
+    		else if(str [i].equals("L")){
+    			temp=50;
+    			if(i+1<str.length){
+    				if(str[i+1].equals("I")||str[i+1].equals("V")||str[i+1].equals("X")){
+    					num=num+temp;
+    				}
+    				else{
+    					temp=-temp;
+    					num=num+temp;
+    				}
+    			}
+    			else{
+    				num=num+temp;
+    			}
+    		}
+    		//C
+    		else if(str [i].equals("C")){
+    			temp=100;
+    			if(i+1<str.length){
+    				if(str[i+1].equals("I")||str[i+1].equals("V")||str[i+1].equals("X")||str[i+1].equals("L")||str[i+1].equals("C")){
+    					num=num+temp;
+    				}
+    				else{
+    					temp=-temp;
+    					num=num+temp;
+    				}
+    			}
+    			else{
+    				num=num+temp;
+    			}
+    		}
+    		//D
+    		else if(str [i].equals("D")){
+    			temp=500;
+    			if(i+1<str.length){
+    				if(str[i+1].equals("I")||str[i+1].equals("V")||str[i+1].equals("X")||str[i+1].equals("L")||str[i+1].equals("C")){
+    					num=num+temp;
+    				}
+    				else{
+    					temp=-temp;
+    					num=num+temp;
+    				}
+    			}
+    			else{
+    				num=num+temp;
+    			}
+    		}
+    		//M, if 10 add directly
+    		else {
+    			temp=1000;
+
+    	     num=num+temp;
+    			
+    		}
+    				
+    		
+    	}
+    	
+    	
+    	return num;
+    	
+    	
+    	
+    }
+}
