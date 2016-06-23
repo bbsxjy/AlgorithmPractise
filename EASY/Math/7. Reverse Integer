@@ -1,0 +1,57 @@
+public class Solution {
+    public int reverse(int x) {
+        String ori="",news="";
+        double fNum;
+        int num;
+        int sign;
+        
+
+      
+        if(x<0){
+            sign=-1;
+            x=-x;
+        }else{
+            sign=1;
+        }
+        
+        if(x<10 && x>0){
+            return x*sign;
+        }
+        
+        ori+=x;
+        Stack s=new Stack();
+        String [] str=ori.split("");
+        
+
+        
+        for(int i =0; i<str.length; i++){
+            if(str[i].equals("-")){
+            	continue;
+            }
+            s.push(Integer.parseInt(str[i]));
+        }
+        
+        int len=s.size();
+        
+        for(int i =0; i<len; i++){
+            news+=s.pop();
+        }
+        
+        fNum=Double.parseDouble(news);
+        
+        if(fNum>Integer.MAX_VALUE){
+            num=0;
+        }
+        else{
+        num=(int)fNum;
+        }
+        return num*sign;
+        
+        
+        
+        
+        
+        
+        
+    }
+}
