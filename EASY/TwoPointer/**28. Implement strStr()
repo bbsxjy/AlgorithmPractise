@@ -1,0 +1,59 @@
+package ImplementstrStr;
+
+
+public class Solution {
+    public int strStr(String haystack, String needle) {
+        
+        if(needle.length()==0){
+        	return 0;
+        }
+    	if(haystack.length()==0 && needle.length()!=0){
+    		return -1;
+    	}
+    	if(needle.length()>haystack.length()){
+    	    return -1;
+    	}
+    	
+    	
+    	String [] hay=haystack.split("");
+        String [] ned=needle.split("");
+        int i=0,j=i,mark=-1,temp=0;
+        while(j<ned.length && i<hay.length){
+        	if(!hay[i].equals(ned[j])){
+        		i++;
+        		mark=i;
+        		temp=mark;
+        	}else{
+        	
+       		if(i+1<hay.length && j+1<ned.length){
+        			if(hay[i+1].equals(ned[j+1])){
+        				i++;
+        				j++;
+        				
+        			}
+        			else{
+        				i++;
+        				mark=-1;
+        			}
+
+        			
+        			
+        		}
+        	    
+        	}
+        	
+    		if(i==hay.length-1 || j==ned.length-1){
+    			if(hay[i].equals(ned[j])){
+    				mark=temp;
+    				break;
+    			}
+    			else{return -1;}
+    		}
+        }
+        
+        return mark;
+
+        
+        
+    }
+}
