@@ -1,0 +1,46 @@
+public class Solution {
+   public String reverseVowels(String s) {
+       //reverse a e i o u in a string
+    	if(s.length()==0 ||s.length()==1){
+    		return s;
+    	}
+
+    	String [] str=s.split("");
+    	int i = 0,j=str.length-1;
+    	while(i!=j && j>i){
+    		if(str[i].equals("a")||str[i].equals("e")||str[i].equals("i")||str[i].equals("o")||str[i].equals("u")||
+    				str[i].equals("A")||str[i].equals("E")||str[i].equals("I")||str[i].equals("O")||str[i].equals("U")){
+    			
+    			while(i!=j){
+    				
+	    			if(str[j].equals("a")||str[j].equals("e")||str[j].equals("i")||str[j].equals("o")||str[j].equals("u")||
+	    					str[j].equals("A")||str[j].equals("E")||str[j].equals("I")||str[j].equals("O")||str[j].equals("U")){
+	    				String temp=str[i];
+	    				str[i]=str[j];
+	    				str[j]=temp;
+	    				i++;
+	    				j--;
+	    				break;
+	    				
+	    			}else{j--;}
+	    		}
+    		}else{
+    			i++;
+    		}
+  		
+    	}
+    	StringBuilder builder = new StringBuilder();
+    	for(String n : str) {
+    	    builder.append(n);
+    	}
+    	
+    	return builder.toString();
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    }
+}
