@@ -1,0 +1,14 @@
+public class Solution {
+    public String reverseString(String s) {
+    	
+    	if(s.length()<2){
+    		return s;
+    	}
+    	
+        StringBuilder sb=new StringBuilder();
+        sb.append(s);
+        sb.reverse();
+        
+        return sb.toString();
+    }
+}
