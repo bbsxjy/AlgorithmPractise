@@ -1,0 +1,59 @@
+public class Solution {
+    public boolean isValid(String s) {
+        if(s.length()==0){
+        	return false;
+        }
+    	
+    	
+    	if(s.length()%2!=0){
+        	return false;
+        }else{
+        	
+        	Stack<Character> st=new Stack<Character>();
+        	char[] half=s.toCharArray();
+        	int i =0;
+        	while(i<s.length()){
+        		if(half[i]=='{'||half[i]=='['||half[i]=='('){
+        			st.push(half[i]);
+        			i++;
+        		}else{
+        			if(half[i]=='}'){
+        				if(st.isEmpty()==false && st.peek()=='{'){
+        					i++;
+        					st.pop();
+        					continue;
+        				}else{
+        					return false;
+        				}
+        			}
+        			if(half[i]==']'){
+        				if(st.isEmpty()==false && st.peek()=='['){
+        					i++;
+        					st.pop();
+        					continue;
+        				}else{
+        					return false;
+        				}
+        			}
+        			if(half[i]==')'){
+        				if(st.isEmpty()==false && st.peek()=='('){
+        					i++;
+        					st.pop();
+        					continue;
+        				}else{
+        					return false;
+        				}
+        			}
+        			else{
+        				return false;
+        			}
+        			
+        		}
+        		
+        		
+        	}
+        	
+        	return st.isEmpty();
+        }
+    }
+}
