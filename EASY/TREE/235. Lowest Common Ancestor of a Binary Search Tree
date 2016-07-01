@@ -1,0 +1,80 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        ArrayList<TreeNode> pPath=new ArrayList<TreeNode>();
+        ArrayList<TreeNode> qPath=new ArrayList<TreeNode>();
+        if(root==null){
+        	return null;
+        }
+        else{
+        	//search for p
+        	if(search(root,p,pPath)!=null){
+        		pPath=search(root,p,pPath);
+        	}else{
+        		return null;
+        	}
+        	//search for q
+        	if(search(root,q,qPath)!=null){
+        		qPath=search(root,q,qPath);
+        	}else{
+        		return null;
+        	}
+        	
+        	//longest length
+        	int size=0;
+        	if(qPath.size()>=pPath.size()){
+        		size=qPath.size();
+        	}else{
+        		size=pPath.size();
+        	}
+        	TreeNode last=null;;
+        	//compare
+        	for(int i =0; i<size; i++){
+        		if(i==pPath.size() || i==qPath.size()){
+        			return last;
+        		}	
+        		if(pPath.get(i).val==qPath.get(i).val){
+        			last=pPath.get(i);
+        			continue;
+        		}else{
+        			return last;
+        		}
+        	}
+        	
+        	
+        }
+        return null;
+        
+    }
+    
+    
+
+    
+    private ArrayList<TreeNode> search(TreeNode root, TreeNode n, ArrayList<TreeNode> Path){
+    	
+    	if(root==null){
+    		return null;
+    	}
+    	
+    	if(root.val==n.val){
+    		Path.add(root);
+    		return Path;
+    	}
+    	   	
+    	if(n.val<root.val){
+    		Path.add(root);
+    		return search(root.left,n,Path);
+    	}else{
+    		Path.add(root);
+    		return search(root.right,n,Path);
+    	}
+    }
+}
