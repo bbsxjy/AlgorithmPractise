@@ -1,0 +1,63 @@
+[
+  {
+    "testcase": {
+      "input": {
+        "text": "babad"
+      },
+      "output": {
+        "array": ["bab", "aba"]
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "text": "cbbd"
+      },
+      "output": {
+        "array": ["bb"]
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "text": "a"
+      },
+      "output": {
+        "array": ["a"]
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "text": "ac"
+      },
+      "output": {
+        "array": ["a"]
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "text": "aacabdkacaa"
+      },
+      "output": {
+        "array": ["aca"]
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "text": "civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"
+      },
+      "output": {
+        "array": ["ranynar"]
+      }
+    }
+  }
+]
+
