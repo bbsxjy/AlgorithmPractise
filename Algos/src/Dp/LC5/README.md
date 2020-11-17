@@ -41,8 +41,7 @@ elements are still equal which means the new string S[i-1 ... j+1] is still pali
 3. After we are getting the expanded substring, we can compare both 1.a and 1.b length to determine the local maximum.
     1. The reason why 1.c is not considered is that the expanded 1.a will cover 1.c
 4. Finally, update the global maximum to get the longest palindromic substring.
-
-
+5. BigO, Time->O(n^2), Space->O(1) 
 
 ### Dynamic Programming
 1. Create visiting boolean map

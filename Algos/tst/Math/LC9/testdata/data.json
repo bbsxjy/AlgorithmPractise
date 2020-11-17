@@ -1,0 +1,63 @@
+[
+  {
+    "testcase": {
+      "input": {
+        "number": 1
+      },
+      "output": {
+        "boolean": true
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "number": -1111
+      },
+      "output": {
+        "boolean": false
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "number": 10
+      },
+      "output": {
+        "boolean": false
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "number": 12221
+      },
+      "output": {
+        "boolean": true
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "number": 135235
+      },
+      "output": {
+        "boolean": false
+      }
+    }
+  },
+  {
+    "testcase": {
+      "input": {
+        "number": 0
+      },
+      "output": {
+        "boolean": true
+      }
+    }
+  }
+]
+
